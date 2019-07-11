@@ -1,0 +1,37 @@
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+
+.namebackground{
+    background: url(bottom1.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.machinebackground{
+    background: url(background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.namefont{
+    font-size:30;
+    color:white;
+    font-family: 'KoPub Batang',sans-Serif;
+}
+
+.tdfont{
+    font-size:20;
+    color:black;
+    font-family: 'KoPub Batang',sans-Serif;
+}
+
+.formbackground{ 
+    background: url(formback.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

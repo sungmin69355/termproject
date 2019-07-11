@@ -1,0 +1,157 @@
+<HTML>
+        <HEAD>
+            <meta charset="utf-8">
+            <TITLE></TITLE>
+            <style>
+                
+                body{
+                        background: url(bottom.png) no-repeat center center fixed; 
+                        -webkit-background-size: cover;
+                        -moz-background-size: cover;
+                        -o-background-size: cover;
+                        background-size: cover;
+                } 
+                font{
+                    color:aliceblue;
+                    font-family:"고딕체";
+
+                }  
+            </style>
+        </HEAD>
+                <script LANGUAGE="JavaScript">
+                        function printClock() {
+                            
+                            var clock = document.getElementById("clock");            // 출력할 장소 선택
+                            var currentDate = new Date();                                     // 현재시간
+                            var calendar = currentDate.getFullYear() + "-" + (currentDate.getMonth()+1) + "-" + currentDate.getDate() // 현재 날짜
+                            var amPm = 'AM'; // 초기값 AM
+                            var currentHours = addZeros(currentDate.getHours(),2); 
+                            var currentMinute = addZeros(currentDate.getMinutes() ,2);
+                            var currentSeconds =  addZeros(currentDate.getSeconds(),2);
+                            
+                            if(currentHours >= 12){ // 시간이 12보다 클 때 PM으로 세팅, 12를 빼줌
+                                amPm = 'PM';
+                                currentHours = addZeros(currentHours - 12,2);
+                            }
+            
+                            if(currentSeconds >= 50){// 50초 이상일 때 색을 변환
+                            currentSeconds = '<span style="color:pink;">'+currentSeconds+'</span>'
+                            }
+                            clock.innerHTML = currentHours+":"+currentMinute+":"+currentSeconds +" <span style='font-size:50px;'>"+ amPm+"</span>"; //날짜를 출력
+                            
+                            setTimeout("printClock()",1000);         // 1초마다 printClock() 함수 호출
+                        }
+            
+                        function addZeros(num, digit) { // 자릿수 맞춰주기
+                            var zero = '';
+                            num = num.toString();
+                            if (num.length < digit) {
+                                for (i = 0; i < digit - num.length; i++) {
+                                zero += '0';
+                                }
+                            }
+                            return zero + num;
+                        }
+                        function ImageSize(){
+                        if(backImg.style.pixelWidth <500){
+                           backImg.style.pixelWidth +=3;
+                           backImg.style.pixelHeight +=2;
+                           setTimeout("ImageSize()",10);
+                          }
+                         }
+
+                            function noba(index) 
+                            {
+                            with (document.game) 
+                            {
+                            var ran = Math.round((Math.random() * 2) + 1); 	
+                            var choiceName;
+                            if (ran == 1) choiceName = "바위";
+                            if (ran == 2) choiceName = "보";
+                            if (ran == 3) choiceName = "가위";
+                            msg.value = "";	
+                            switch(index) { 
+                            case 1 : 
+                            if (ran == 1)
+                            {  
+                            ss.value++; msg.value += "무승부입니다 "; break; 
+                            }
+                            if (ran == 2) 
+                            {  
+                            loss.value++;  msg.value += "패배입니다"; break; 
+                            }
+                            if (ran == 3) 
+                            {  
+                            win.value++; msg.value += "이기셨네요"; break; 
+                            }
+                            
+                            case 2 : 
+                            if (ran == 1) 
+                            {  
+                            win.value++;  msg.value += "이기셨네요"; break; 
+                            }
+                            if (ran == 2) 
+                            {  
+                            ss.value++; msg.value += "무승부입니다 "; break;
+                            }
+                            if (ran == 3) 
+                            {  
+                            loss.value++; msg.value +=  "패배입니다"; break; 
+                            }
+                            
+                            case 3 : 
+                            if (ran == 1) 
+                            {  
+                            loss.value++;  msg.value +="패배입니다"; break; 
+                            }
+                            if (ran == 2) 
+                            {  
+                            win.value++; msg.value += "이기셨네요"; break; 
+                            }
+                            if (ran == 3) 
+                            {  
+                            ss.value++; msg.value += "무승부입니다 "; break;
+                            }
+                            }
+                            var random_num = Math.floor(Math.random()*8);
+                            }
+                        }
+            </script>
+    <body onload="printClock(),ImageSize()">
+            <P style="border:1px solid white; color:white;font-size:50px; text-align:center;" id="clock">
+            </p>
+           <h1><p align ="center">
+               <font>              
+                <a>※로고를 누르시면 회원가입창이 뜹니다.</a><br><br>
+                <table>
+                    <tr>
+                        <td align ="center" width="700"><a href="form.html" target="_blank"><img ID=backImg border="0" src="mark.jpg" align="center"></a></td>
+                    </tr>
+                </table>
+                <br><marquee direction="left" width="500">컴퓨터 공학과 16학번 조성민입니다.</marquee>
+                </font></p></h1>
+                <br>
+                <form name = "game">
+                        <table align ="center" width ="100" font ="white">
+                            <tr>
+                                <td colspan="3"><p align ="center"><font size="50px" color="whtie">Killing Time~</p></font></td>
+                            </tr>
+                            <tr>
+                                <td><img src="bawe.png" width ="200" height="100" value ="바위" onClick="noba(1)"></td>
+                                <td><img src="gawe.png" width ="200" height="100" value ="보" onClick="noba(2)"></td>
+                                <td><img src="bo.png" width ="200" height="100" value ="가위" onClick="noba(3)"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><input type = "text" width ="200"  size = "100" name="msg"><br></td>    
+                            </tr>
+                            <tr>
+                                <td colspan="3"><input type = "text" name = "win" size = "2" readonly> <font color="white">번 승리
+                                    <input type = "text" name = "loss" size = "2" readonly>번 패배
+                                    <input type = "text" name = "ss" size = "2" readonly >번 무승부</font></td>
+                            </tr>
+                        </table>
+                </form>
+
+            
+        </BODY>
+</HTML>

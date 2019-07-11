@@ -1,0 +1,149 @@
+<HTML>
+<HAED>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="main.css">
+	<TITLE> 회원가입창</TITLE>
+	<script LANGUAGE="JavaScript">
+			function getpet () {
+				var toyear = 1997; //(1997 - 내가 태어난날) % 12 합니다.
+				var birthyear = document.frm.inyear.value;
+				var birthpet="Ox"    
+				x = (toyear - birthyear) % 12// x값을 구합니다.
+				if ((x == 1) || (x == -11)) {
+					birthpet="쥐띠"
+					}
+					else  {
+					 if (x == 0){
+					 birthpet="소띠"           
+					 }
+					 else  {
+					  if ((x == 11) || (x == -1)) {
+					  birthpet="호랑이띠"          
+					  }
+					  else  {
+					   if ((x == 10) || (x == -2)) {
+					   birthpet="토끼띠"         						   }
+					   else  {
+						if ((x == 9) || (x == -3))  {
+						birthpet="용띠"         
+						}
+						else  {
+						 if ((x == 8) || (x == -4))  { 
+						 birthpet="뱀띠"          
+						 }
+						 else  {
+						  if ((x == 7) || (x == -5))  { 
+						  birthpet="말띠"          
+							  }
+						  else  {
+						   if ((x == 6) || (x == -6))  { 
+							   birthpet="양띠"          
+						   }
+						   else  {
+		 					if ((x == 5) || (x == -7))  {  
+								birthpet="원숭이띠"         
+							}
+							else  {
+							 if ((x == 4) || (x == -8))  {
+							 birthpet="닭띠"        
+							 }
+							 else  {
+							  if ((x == 3) || (x == -9))  {
+							  birthpet="개띠"            
+							  }
+							  else  {
+							   if ((x == 2) || (x == -10))  {
+							   birthpet="돼지띠"             
+							   }  
+							  }
+							 }
+							}
+						   }
+						  }
+						 }
+						}
+					   }
+					  }
+					 }
+					}
+					document.frm.birth.value = birthpet;
+			}
+
+			function clickEvent(){
+				alert("가입이 완료되었습니다.");
+			}
+		   
+		</script>
+
+	
+</HAED>
+
+<BODY class="formbackground">
+		<FONT SIZE="4" COLOR = "#B404AE">
+	<h2 align="center">회원 정보 입력</h2></FONT>
+	</p>
+	<HR>
+	<TABLE WIDTH="600" HEIGHT="350" BORDER="1" CELLPADDING="5" ALIGN="CENTER">
+	<TR>
+		<TD class="tdfont">아이디</TD>
+		<TD><INPUT TYPE="text"></TD>
+	</TR>
+	<TR>
+		<TD class="tdfont">비밀번호</TD>
+		<TD><input type="password"></TD>
+	</TR>
+	<TR>
+		<TD class="tdfont">이름</TD>
+		<TD><input type = "text"></TD>
+	</TR>
+	<TR>
+		<TD class="tdfont">집 전화번호</TD>
+		<TD nowrap><SELECT NAME="MAP">
+		    <OPTION VALUE="map1">02</OPTION>
+		    <OPTION VALUE="map2">031</OPTION>
+		    <OPTION VALUE="ma3">051</OPTION>
+		    <OPTION VALUE="map4">070</OPTION><SELECT> - 
+		 <input type="text"SIZE= "10" > - <input type="text" SIZE= "10"></TD>
+	</TR>
+	<TR>
+		<TD class="tdfont">직업</TD>
+		<TD><SELECT NAME="SELECT">
+		    <OPTION VALUE="SELECT 1">중,고등학생</OPTION>
+		    <OPTION VALUE="SELECT 2">대학생</OPTION>
+		    <OPTION VALUE="SELECT 3">대학원생</OPTION>
+		    <OPTION VALUE="SELECT 4">주부</OPTION>
+		    <OPTION VALUE="SELECT 5">직장인</OPTION></TD>
+		  </SELECT>
+	</TR>
+	<TR>
+		<TD class="tdfont">성별</TD>
+		<TD><input type="radio" name="1" value="male">남자
+			<input type="radio" name="1" value="women">여자</TD>
+	</TR>
+	<TR>
+		<TD class="tdfont">취미</TD>
+		<TD><input type="checkbox">음악듣기 <input type="checkbox">여행
+		    <input type="checkbox">체육활동<input type="checkbox">악기다루기</TD>
+	</TR>
+	<TR>
+			<TD class="tdfont">띠를<br>확인하세요</TD>
+			<TD ><form NAME="frm">
+					출생 연도를 입력하세요
+					<input TYPE="text" SIZE="4" NAME="inyear" value="2000" onFocus="this.select()">년
+					<input TYPE="button" VALUE="확인" onClick="getpet()"> 
+					===>
+					<input TYPE="text" SIZE="9" NAME="birth">입니다.
+			</form></TD>
+		</TR>
+	<TR>
+		<TD class="tdfont">홈페이지 방문목적</TD>
+		<TD><textarea name ="text" rows="10" cols="50"></textarea></TD>
+	</TR>	
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER">
+		 <a href="index.html"><input type="submit" onclick="clickEvent()" value="전송하기"></a></TD>
+	</TR>
+	</TABLE>
+	</form>
+</BODY>
+</HTML>
